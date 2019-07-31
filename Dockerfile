@@ -1,21 +1,14 @@
-FROM alpine:3.10.1
+FROM ubuntu:18.10
 
 RUN set -ex \
-    && echo "http://nl.alpinelinux.org/alpine/edge/main" >> /etc/apk/repositories \
-    && echo "http://nl.alpinelinux.org/alpine/edge/testing" >> /etc/apk/repositories \
-    && apk update \
-    && apk upgrade \
-    && apk add --no-cache \
-    apache2-utils \
+    && apt-get update -y \
+    && apt-get install -y \
     bash \
-    bind-tools \
-    bird \
-    bridge-utils \
-    busybox-extras \
-    conntrack-tools \
+    dnsutils \ 
+    bird \ 
     curl \
     dhcping \
-    drill \
+    ldnsutils \
     ethtool \
     file\
     fping \
@@ -25,20 +18,13 @@ RUN set -ex \
     ipset \
     iptables \
     iptraf-ng \
-    iputils \
     ipvsadm \
-    libc6-compat \
-    liboping \
     mtr \
-    net-snmp-tools \
     netcat-openbsd \
     nftables \
     ngrep \
     nmap \
-    nmap-nping \
     openssl \
-    py-crypto \
-    py2-virtualenv \
     python2 \
     scapy \
     socat \
@@ -47,10 +33,7 @@ RUN set -ex \
     tcptraceroute \
     util-linux \
     vim \
-    rsync
-
-# apparmor issue #14140
-RUN mv /usr/sbin/tcpdump /usr/bin/tcpdump
+    rsync && apt-get autoclean -y
 
 # Entry point
 CMD ["/bin/bash"]
