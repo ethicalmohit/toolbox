@@ -33,7 +33,7 @@ RUN set -ex \
     tcptraceroute \
     util-linux \
     vim \
-    rsync && apt-get autoclean -y
+    rsync && rm -rf /var/lib/apt/lists/*
 
 # Entry point
 CMD ["/bin/bash"]
