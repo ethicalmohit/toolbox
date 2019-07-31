@@ -55,4 +55,5 @@ RUN mv /usr/sbin/tcpdump /usr/bin/tcpdump
 # Installing ctop - top-like container monitor
 RUN wget https://github.com/bcicen/ctop/releases/download/v0.7.1/ctop-0.7.1-linux-amd64 -O /usr/local/bin/ctop && chmod +x /usr/local/bin/ctop
 
-CMD ["/bin/bash","-c"]
+# Entry point
+CMD ["/bin/bash"]
