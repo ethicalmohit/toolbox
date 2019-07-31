@@ -1,4 +1,4 @@
 # toolbox
 
-This repository has dockerfile assosiated with ```ethicalmohiy/toolbox:latest``` docker image.
+This repository has dockerfile assosiated with ```ethicalmohit/toolbox:latest``` docker image.
 
