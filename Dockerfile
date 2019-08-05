@@ -4,6 +4,7 @@ RUN set -ex \
     && apt-get update -y \
     && apt-get install -y \
     bash \
+    telnet \ 
     dnsutils \ 
     bird \ 
     curl \
