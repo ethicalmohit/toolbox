@@ -34,7 +34,9 @@ RUN set -ex \
     tcptraceroute \
     util-linux \
     vim \
-    rsync && rm -rf /var/lib/apt/lists/*
-
-# Entry point
-CMD ["/bin/bash"]
+    rsync \
+    redis-server \
+    wget \
+    postgresql \ 
+    gnupg2 \ 
+    postgresql-contrib && rm -rf /var/lib/apt/lists/* 
